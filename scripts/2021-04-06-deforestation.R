@@ -63,12 +63,6 @@ df2 =
 
 # to leaflet
 
-## define projection
-world_robinson = leafletCRS(crsClass = "L.Proj.CRS", code = "EPSG:54030",
-                            proj4def = "+proj=robin +lon_0=0 +x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=m no_defs",
-                            resolutions = 2^(16:12), # 8192 down to 0.5
-                            origin = c(0, 0)
-)
 
 ## color ramp
 
@@ -137,6 +131,13 @@ df2$label =
          }
          
        })
+
+## define projection
+world_robinson = leafletCRS(crsClass = "L.Proj.CRS", code = "EPSG:54030",
+                            proj4def = "+proj=robin +lon_0=0 +x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=m no_defs",
+                            resolutions = 2.028^(16:12), # 8192 down to 0.5
+                            origin = c(0, 0)
+)
 
 
 ## map
