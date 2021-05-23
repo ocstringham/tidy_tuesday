@@ -15,7 +15,7 @@ broadband =
   distinct(STATEFP, COUNTYFP, .keep_all = TRUE) %>% 
   mutate(`BROADBAND AVAILABILITY PER FCC` = as.numeric(`BROADBAND AVAILABILITY PER FCC`))
 
-# load in county shapefiles
+# load in county shapefiles from https://www.census.gov/geographies/mapping-files/time-series/geo/carto-boundary-file.html
 county = read_sf('data/cb_2018_us_county_20m/cb_2018_us_county_20m.shp')
 
 # join & make tooltip
